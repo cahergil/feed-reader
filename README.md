@@ -2,10 +2,6 @@
 
 In this project the students are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where we come in.
 
-## What will I learn?
-
-You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
-
 ## Running this app
 
 &nbsp; To load this application simply download the materials in this repo, then run the `index.html` file in the main directory. This file includes the SpecRunner information from the Jasmine Framework.

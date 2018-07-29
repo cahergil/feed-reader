@@ -7,16 +7,21 @@ In this project the students are given a web-based application that reads RSS fe
 &nbsp; To load this application simply download the materials in this repo, then run the `index.html` file in the main directory. This file includes the SpecRunner information from the Jasmine Framework.
 
 
-## Jasmine Specs
+## Tests
 
-&nbsp; In this code Jasmine is testing for:
-
-* The existence of the array containing feeds
-* That the feeds have a valid URL and Name
-* The `Menu` is hidden by default
-* The `Menu` shows/hides properly with user action
-* The feeds are properly collected from the Google API
-* The app display changes when a user selects a different feed
+7 Tests were implemented in this web application 
+* Test suite "RSS Feeds"
+  *  a test to ensure  that allFeeds object  is defined and that it is not empty. 
+  * a test to ensure  that allFeeds object  has a name defined and that the name is not empty. 
+  * a test to ensure  that allFeeds object  has a URL defined and that the URL is not empty.
+* Test suite "The menu"
+  * a test that ensures the menu element is hidden by default.
+  * a test that ensures the menu changes visibility when the menu icon is clicked.
+* Test  suite  "Initial Entries"
+  * a test that ensures when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container.
+* Test suite  "New Feed Selection"
+  * a test that ensures when a new feed is loaded by the loadFeed function that the content actually changes.
+  
 
 ## Dependencies
 

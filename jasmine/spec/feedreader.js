@@ -31,6 +31,8 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+        //we traverse the allFeeds array and ensure that the property url of each
+        //feed is defined and is not empty.
         it('feed url not empty',function(){
             allFeeds.forEach(function(feed){
                 expect(feed.url).toBeDefined();
@@ -43,6 +45,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        //idem as the test before but with name property
         it('feed name not empty',function(){
             allFeeds.forEach(function(feed){
                 expect(feed.name).toBeDefined();
@@ -62,6 +65,9 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+        //using JQuery we take the body element and check whether it
+        //has a class called menu-hidden, that means the slide bar is off the
+        //the screen
         it(' element is hidden by default',function(){
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
@@ -71,6 +77,10 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+         //we simulate 2 clicks on the hamburguer icon. The first
+         //to show the menu and the second to hide it.
+         //we test both scenarios,in the first, the body element should  
+         //have a class called menu-hidden, whereas in the second it doesn't have it
          it(' changes visibility when clicked',function(){
             var menuIcon = $('.menu-icon-link');
 
@@ -96,6 +106,9 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        //The feed is load for the menu element 0,i.e Udacity blog.
+        //we test if the number of children of the element .feed is greater
+        //than 0. That means the are articles in the feed.
         beforeEach(function(done){
             loadFeed(0,done);
             
@@ -110,13 +123,15 @@ $(function() {
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
+    //We have to load the feed twice, in the first load the articles are
+    //are store in an array; firstFeed. Then the feed is loaded again with
+    //the parameter done, to take into account the asynchronous nature of the 
+    //load. In the text, the elements of firstFeed are compared with the articles
+    //of the second load. If they are different the test should be true.
     describe('New Feed Selection ',function () {
         let feed = document.querySelector('.feed');
         let firstFeed = [];
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+  
         beforeEach(function(done){
             loadFeed(0);
             Array.from(feed.children).forEach(function(entry){
